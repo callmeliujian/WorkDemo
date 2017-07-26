@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ContainerView.h"
+#import "UIButton+ENUM.h"
 
 @interface ViewController ()<ButtonProtocol>
 
@@ -19,14 +20,14 @@
     [super viewDidLoad];
     
     ContainerView *containerView = [[ContainerView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 50)];
-    containerView.backgroundColor = [UIColor blackColor];
+    //containerView.backgroundColor = [UIColor blackColor];
     containerView.delegate = self;
     [self.view addSubview:containerView];
     
 }
 
 - (void)theMethodOfProtocol:(UIButton *)btn {
-    NSLog(@"%ld",(long)btn.tag);
+    NSLog(@"%ld",btn.buttonType);
 }
 
 

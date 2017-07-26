@@ -14,6 +14,7 @@
 		1D18C6641F272737008A879F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D18C6631F272737008A879F /* Assets.xcassets */; };
 		1D18C6671F272737008A879F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D18C6651F272737008A879F /* LaunchScreen.storyboard */; };
 		1D18C6701F272848008A879F /* ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D18C66F1F272848008A879F /* ContainerView.m */; };
+		1DD7478D1F287F61009BA928 /* UIButton+ENUM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7478C1F287F61009BA928 /* UIButton+ENUM.m */; };
 		594DA63BE48D08B4BD35B89C /* libPods-司机加盟忘记密码demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8112D6C11C775888B14D8018 /* libPods-司机加盟忘记密码demo.a */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +32,8 @@
 		1D18C66E1F272848008A879F /* ContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerView.h; sourceTree = "<group>"; };
 		1D18C66F1F272848008A879F /* ContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerView.m; sourceTree = "<group>"; };
 		1D18C6711F273A65008A879F /* ButtonProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonProtocol.h; sourceTree = "<group>"; };
-		1D18C6721F27420B008A879F /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		1DD7478B1F287F61009BA928 /* UIButton+ENUM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ENUM.h"; sourceTree = "<group>"; };
+		1DD7478C1F287F61009BA928 /* UIButton+ENUM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ENUM.m"; sourceTree = "<group>"; };
 		7D2DF16375A1AFD72539FD2C /* Pods-司机加盟忘记密码demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-司机加盟忘记密码demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-司机加盟忘记密码demo/Pods-司机加盟忘记密码demo.release.xcconfig"; sourceTree = "<group>"; };
 		8112D6C11C775888B14D8018 /* libPods-司机加盟忘记密码demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-司机加盟忘记密码demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF68EB269087C1837615F746 /* Pods-司机加盟忘记密码demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-司机加盟忘记密码demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-司机加盟忘记密码demo/Pods-司机加盟忘记密码demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,8 +78,9 @@
 				1D18C65E1F272737008A879F /* ViewController.m */,
 				1D18C66E1F272848008A879F /* ContainerView.h */,
 				1D18C66F1F272848008A879F /* ContainerView.m */,
+				1DD7478B1F287F61009BA928 /* UIButton+ENUM.h */,
+				1DD7478C1F287F61009BA928 /* UIButton+ENUM.m */,
 				1D18C6711F273A65008A879F /* ButtonProtocol.h */,
-				1D18C6721F27420B008A879F /* Header.h */,
 				1D18C6601F272737008A879F /* Main.storyboard */,
 				1D18C6631F272737008A879F /* Assets.xcassets */,
 				1D18C6651F272737008A879F /* LaunchScreen.storyboard */,
@@ -238,6 +241,7 @@
 				1D18C6701F272848008A879F /* ContainerView.m in Sources */,
 				1D18C65F1F272737008A879F /* ViewController.m in Sources */,
 				1D18C65C1F272737008A879F /* AppDelegate.m in Sources */,
+				1DD7478D1F287F61009BA928 /* UIButton+ENUM.m in Sources */,
 				1D18C6591F272737008A879F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

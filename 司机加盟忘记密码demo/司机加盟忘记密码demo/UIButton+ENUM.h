@@ -1,13 +1,12 @@
 //
-//  Header.h
+//  UIButton+ENUM.h
 //  司机加盟忘记密码demo
 //
-//  Created by 刘健 on 2017/7/25.
+//  Created by 刘健 on 2017/7/26.
 //  Copyright © 2017年 刘健. All rights reserved.
 //
 
-#ifndef Header_h
-#define Header_h
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, ButtonType) {
     ButtonTypeNone,
@@ -15,4 +14,8 @@ typedef NS_ENUM(NSInteger, ButtonType) {
     ButtonTypeForgetPWD
 };
 
-#endif /* Header_h */
+@interface UIButton (ENUM)
+
+@property (nonatomic, assign) ButtonType buttonType;
+
+@end
