@@ -9,7 +9,6 @@
 #import "ContainerView.h"
 #import "UIButton+ENUM.h"
 #import "Masonry.h"
-#import "Header.h"
 
 @implementation ContainerView
 
@@ -29,15 +28,14 @@
     
     UIButton *driverJoinButton = [[UIButton alloc] init];
     [driverJoinButton setTitle:@"司机加盟" forState:UIControlStateNormal];
-    driverJoinButton.backgroundColor = [UIColor blueColor];
-    driverJoinButton.titleLabel.textColor = [UIColor redColor];
+    [driverJoinButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [driverJoinButton addTarget:self action:@selector(driverJoinBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     driverJoinButton.buttonType = ButtonTypeDriveJion;
     [self addSubview:driverJoinButton];
     
     UIButton *forgetPasswordButton = [[UIButton alloc] init];
     [forgetPasswordButton setTitle:@"忘记密码" forState:UIControlStateNormal];
-    forgetPasswordButton.backgroundColor = [UIColor redColor];
+    [forgetPasswordButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [forgetPasswordButton addTarget:self action:@selector(fogetPasswordBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     forgetPasswordButton.buttonType = ButtonTypeForgetPWD;
     [self addSubview:forgetPasswordButton];
@@ -56,12 +54,14 @@
 }
 
 - (void)driverJoinBtnClicked:(UIButton *)btn {
+    btn.enabled = NO;
     if ([self.delegate respondsToSelector:@selector(theMethodOfProtocol:)]) {
         [self.delegate theMethodOfProtocol:btn];
     }
 }
 
 - (void)fogetPasswordBtnClicked:(UIButton *)btn {
+    btn.enabled = NO;
     if ([self.delegate respondsToSelector:@selector(theMethodOfProtocol:)]) {
         [self.delegate theMethodOfProtocol:btn];
     }
