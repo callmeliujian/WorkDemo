@@ -7,6 +7,9 @@
 //
 
 #import "OrderListTableViewCell.h"
+#import "Masonry.h"
+#import "SYExamineView.h"
+#import "SYContentView.h"
 
 @implementation OrderListTableViewCell
 
@@ -30,6 +33,37 @@
 }
 
 - (void)setUpUI {
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.image = [UIImage imageNamed:@"work_order_item_bg.9"];
+    imageView.userInteractionEnabled = YES;
+    imageView.layer.cornerRadius = 5;
+    imageView.layer.masksToBounds = YES;
+    [self.contentView addSubview:imageView];
+    
+    SYContentView *contentView = [[SYContentView alloc] init];
+    contentView.backgroundColor = [UIColor whiteColor];
+    [imageView addSubview:contentView];
+    
+    SYExamineView *examineLabel = [[SYExamineView alloc] init];
+    examineLabel.backgroundColor = [UIColor redColor];
+    [imageView addSubview:examineLabel];
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.right.mas_equalTo(self.contentView);
+    }];
+    
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.mas_equalTo(self.contentView);
+        make.right.mas_equalTo(examineLabel);
+    }];
+    
+    [examineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.right.mas_equalTo(self.contentView);
+        make.width.mas_equalTo(80);
+    }];
     
 }
 
