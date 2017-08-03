@@ -49,6 +49,7 @@
     
     SYExamineView *examineLabel = [[SYExamineView alloc] init];
     examineLabel.backgroundColor = [UIColor redColor];
+    [examineLabel sizeToFit];
     [imageView addSubview:examineLabel];
     
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,12 +58,14 @@
     
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.left.mas_equalTo(self.contentView);
-        make.right.mas_equalTo(examineLabel);
+        make.right.mas_equalTo(examineLabel.mas_left);
     }];
     
     [examineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.right.mas_equalTo(self.contentView);
         make.width.mas_equalTo(80);
+//        make.top.bottom.mas_equalTo(self.contentView);
+//        make.width.mas_equalTo(examineLabel.bounds.size.width);
     }];
     
 }
