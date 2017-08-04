@@ -11,6 +11,7 @@
 #import "SYContentViewStyle.h"
 #import "SYDetailView.h"
 #import "OrderAttachedView.h"
+#import "SYDriverSkillView.h"
 
 @interface SYContentView()
 /**
@@ -29,7 +30,7 @@
 /**
  司机技能
  */
-@property (nonatomic, strong) UIView *driverSkillView;
+@property (nonatomic, strong) SYDriverSkillView *driverSkillView;
 /**
  订单额外需求
  */
@@ -57,11 +58,12 @@
     
     self.orderTypeImageView.image = [UIImage imageNamed:@"realtime_script"];
     [self.orderTypeImageView sizeToFit];
-    [self setAllFrame:self.contentViewStyle withImageView:(UIImageView*)self.orderAttView];
+    //[self setAllFrame:self.contentViewStyle withImageView:(UIImageView*)self.orderAttView];
+    [self setAllFrame:self.contentViewStyle withImageView:(UIImageView *)self.driverSkillView];
     [self setData];
     [self addSubview:self.orderTypeImageView];
     [self addSubview:self.distanceLabel];
-    [self addSubview:self.orderAttView];
+    [self addSubview:self.driverSkillView];
     [self addSubview:self.detailView];
     
 }
@@ -109,9 +111,9 @@
     return _distanceLabel;
 }
 
-- (UIView *)driverSkillView {
+- (SYDriverSkillView *)driverSkillView {
     if (!_driverSkillView) {
-        _driverSkillView = [[UIView alloc] init];
+        _driverSkillView = [[SYDriverSkillView alloc] init];
         _driverSkillView.backgroundColor = [UIColor yellowColor];
     }
     return _driverSkillView;

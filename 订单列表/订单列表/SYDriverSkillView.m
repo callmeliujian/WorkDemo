@@ -26,6 +26,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        [self.driveSkillTextMuArray addObject:@"12345"];
+        [self.driveSkillTextMuArray addObject:@"6789"];
+        [self.driveSkillTextMuArray addObject:@"56723"];
+        [self.driveSkillColorMuArray addObject:[UIColor blueColor]];
+        [self.driveSkillColorMuArray addObject:[UIColor redColor]];
+        [self.driveSkillColorMuArray addObject:[UIColor brownColor]];
         [self setUpUI];
     }
     return self;
@@ -59,7 +65,7 @@
 }
 
 - (NSMutableArray *)driveSkillColorMuArray {
-    if (_driveSkillColorMuArray) {
+    if (!_driveSkillColorMuArray) {
         _driveSkillColorMuArray = [NSMutableArray array];
     }
     return _driveSkillColorMuArray;
