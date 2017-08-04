@@ -18,6 +18,8 @@
 		1D4D9E551F306E3D009B4D02 /* SYContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D9E541F306E3D009B4D02 /* SYContentView.m */; };
 		1D4D9E5E1F317FD4009B4D02 /* SYContentViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D9E5D1F317FD4009B4D02 /* SYContentViewStyle.m */; };
 		1D4D9E611F330CA5009B4D02 /* SYDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D9E601F330CA5009B4D02 /* SYDetailView.m */; };
+		1D4D9E641F344FD6009B4D02 /* SYDriverSkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D9E631F344FD6009B4D02 /* SYDriverSkillView.m */; };
+		1D4D9E671F34506F009B4D02 /* OrderAttachedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D9E661F34506F009B4D02 /* OrderAttachedView.m */; };
 		53282DF1C0E44581A5F68D08 /* libPods-订单列表.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063557190B1F687B9939E4AF /* libPods-订单列表.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,10 @@
 		1D4D9E5D1F317FD4009B4D02 /* SYContentViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYContentViewStyle.m; sourceTree = "<group>"; };
 		1D4D9E5F1F330CA5009B4D02 /* SYDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDetailView.h; sourceTree = "<group>"; };
 		1D4D9E601F330CA5009B4D02 /* SYDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDetailView.m; sourceTree = "<group>"; };
+		1D4D9E621F344FD6009B4D02 /* SYDriverSkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDriverSkillView.h; sourceTree = "<group>"; };
+		1D4D9E631F344FD6009B4D02 /* SYDriverSkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDriverSkillView.m; sourceTree = "<group>"; };
+		1D4D9E651F34506F009B4D02 /* OrderAttachedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderAttachedView.h; sourceTree = "<group>"; };
+		1D4D9E661F34506F009B4D02 /* OrderAttachedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderAttachedView.m; sourceTree = "<group>"; };
 		A440EB19FB83DEA29483D08D /* Pods-订单列表.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-订单列表.debug.xcconfig"; path = "Pods/Target Support Files/Pods-订单列表/Pods-订单列表.debug.xcconfig"; sourceTree = "<group>"; };
 		A646F8A504F68D0A2048F528 /* Pods-订单列表.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-订单列表.release.xcconfig"; path = "Pods/Target Support Files/Pods-订单列表/Pods-订单列表.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +100,10 @@
 				1D4D9E601F330CA5009B4D02 /* SYDetailView.m */,
 				1D4D9E5C1F317FD4009B4D02 /* SYContentViewStyle.h */,
 				1D4D9E5D1F317FD4009B4D02 /* SYContentViewStyle.m */,
+				1D4D9E621F344FD6009B4D02 /* SYDriverSkillView.h */,
+				1D4D9E631F344FD6009B4D02 /* SYDriverSkillView.m */,
+				1D4D9E651F34506F009B4D02 /* OrderAttachedView.h */,
+				1D4D9E661F34506F009B4D02 /* OrderAttachedView.m */,
 				1D4D9E361F302280009B4D02 /* Main.storyboard */,
 				1D4D9E391F302280009B4D02 /* Assets.xcassets */,
 				1D4D9E3B1F302280009B4D02 /* LaunchScreen.storyboard */,
@@ -252,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D4D9E551F306E3D009B4D02 /* SYContentView.m in Sources */,
+				1D4D9E641F344FD6009B4D02 /* SYDriverSkillView.m in Sources */,
 				1D4D9E521F306C24009B4D02 /* SYExamineView.m in Sources */,
 				1D4D9E5E1F317FD4009B4D02 /* SYContentViewStyle.m in Sources */,
 				1D4D9E611F330CA5009B4D02 /* SYDetailView.m in Sources */,
@@ -259,6 +270,7 @@
 				1D4D9E321F302280009B4D02 /* AppDelegate.m in Sources */,
 				1D4D9E461F3022D7009B4D02 /* OrderListTableViewCell.m in Sources */,
 				1D4D9E2F1F302280009B4D02 /* main.m in Sources */,
+				1D4D9E671F34506F009B4D02 /* OrderAttachedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

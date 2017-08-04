@@ -64,8 +64,6 @@
     [examineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.right.mas_equalTo(self.contentView);
         make.width.mas_equalTo(80);
-//        make.top.bottom.mas_equalTo(self.contentView);
-//        make.width.mas_equalTo(examineLabel.bounds.size.width);
     }];
     
 }

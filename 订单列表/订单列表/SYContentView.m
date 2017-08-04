@@ -10,9 +10,9 @@
 #import "Masonry.h"
 #import "SYContentViewStyle.h"
 #import "SYDetailView.h"
+#import "OrderAttachedView.h"
 
 @interface SYContentView()
-
 /**
  设置frame的model
  */
@@ -30,6 +30,10 @@
  司机技能
  */
 @property (nonatomic, strong) UIView *driverSkillView;
+/**
+ 订单额外需求
+ */
+@property (nonatomic, strong) OrderAttachedView *orderAttView;
 /**
  细节展示（起点、终点、收入）
  */
@@ -53,19 +57,26 @@
     
     self.orderTypeImageView.image = [UIImage imageNamed:@"realtime_script"];
     [self.orderTypeImageView sizeToFit];
-    [self setAllFrame:self.contentViewStyle];
+    [self setAllFrame:self.contentViewStyle withImageView:(UIImageView*)self.orderAttView];
     [self setData];
     [self addSubview:self.orderTypeImageView];
     [self addSubview:self.distanceLabel];
-    [self addSubview:self.driverSkillView];
+    [self addSubview:self.orderAttView];
     [self addSubview:self.detailView];
     
 }
 
-- (void)setAllFrame:(SYContentViewStyle *)contentViewStyle {
+
+/**
+ 设置所有元素frame布局
+
+ @param contentViewStyle 所有元素的frame
+ @param imageViwe 额外的image（司机技能、订单额外功能）
+ */
+- (void)setAllFrame:(SYContentViewStyle *)contentViewStyle withImageView:(UIImageView *)imageViwe{
     self.orderTypeImageView.frame = contentViewStyle.orderTypeRect;
     self.distanceLabel.frame = contentViewStyle.distanceLabelRect;
-    self.driverSkillView.frame = contentViewStyle.driverSkillViewRect;
+    imageViwe.frame = contentViewStyle.driverSkillViewRect;
     self.detailView.frame = contentViewStyle.detailViewRect;
 }
 
@@ -120,6 +131,14 @@
         _distance = @"31米";
     }
     return _distance;
+}
+
+- (OrderAttachedView *)orderAttView {
+    if (!_orderAttView) {
+        _orderAttView = [[OrderAttachedView alloc] init];
+        _orderAttView.backgroundColor = [UIColor blueColor];
+    }
+    return _orderAttView;
 }
 
 @end

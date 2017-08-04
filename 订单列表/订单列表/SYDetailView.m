@@ -30,8 +30,6 @@
     self = [super init];
     if (self) {
         [self setUpUI];
-#warning 
-        self.isMultipleAdd = YES;
     }
     return self;
 }
@@ -47,12 +45,12 @@
         
     [self.startImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(self);
-        //make.size.mas_equalTo(CGSizeMake(40, 40));
     }];
     
     [self.startLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.startImageView.mas_right);
         make.top.mas_equalTo(self.startImageView.mas_top);
+        make.right.mas_lessThanOrEqualTo(self.mas_right).mas_offset(-120);
     }];
     
     
@@ -64,15 +62,25 @@
     if (self.isMultipleAdd) {
         [self addSubview:self.multipleAddImageView];
         [self.multipleAddImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.endLabel.mas_top);
-            make.left.mas_equalTo(self.endLabel.mas_right);
+            make.top.mas_equalTo(self.endImageView.mas_top);
+            make.right.mas_equalTo(self).mas_offset(-140);
+        }];
+        
+        [self.endLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.endImageView.mas_top);
+            make.left.mas_equalTo(self.endImageView.mas_right);
+            make.right.mas_lessThanOrEqualTo(self.multipleAddImageView.mas_left);
+        }];
+        
+    } else {
+        [self.endLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.endImageView.mas_top);
+            make.left.mas_equalTo(self.endImageView.mas_right);
+            make.right.mas_lessThanOrEqualTo(self.mas_right).mas_offset(-120);
         }];
     }
     
-    [self.endLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.endImageView.mas_top);
-        make.left.mas_equalTo(self.endImageView.mas_right);
-    }];
+
     
     [self.priceImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.endImageView.mas_bottom);
@@ -82,6 +90,7 @@
     [self.priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.priceImageView.mas_top);
         make.left.mas_equalTo(self.priceImageView.mas_right);
+        make.right.mas_lessThanOrEqualTo(self.mas_right).mas_offset(-120);
     }];
     
 }
@@ -115,8 +124,8 @@
 - (UILabel *)startLabel {
     if (!_startLabel) {
         _startLabel = [[UILabel alloc] init];
-        _startLabel.text = @"桑普大厦";
-        [_startLabel sizeToFit];
+        _startLabel.text = @"桑普大厦恍恍惚惚恍恍惚惚恍恍惚惚恍恍惚惚恍恍惚惚恍恍惚惚哈哈哈";
+        //[_startLabel sizeToFit];
     }
     return _startLabel;
 }
@@ -124,7 +133,7 @@
 - (UILabel *)endLabel {
     if (!_endLabel) {
         _endLabel = [[UILabel alloc] init];
-        _endLabel.text = @"友谊社区（北三环西三天0";
+        _endLabel.text = @"友谊社区（北三环西三天0hhhhhhhhhhhhhhhhhh";
         [_endLabel sizeToFit];
     }
     return _endLabel;
