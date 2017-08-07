@@ -19,12 +19,14 @@
  */
 @property (nonatomic, assign) CGRect distanceLabelRect;
 /**
- 司机技能
+ 司机技能或者订单额外功能
  */
-@property (nonatomic, assign) CGRect driverSkillViewRect;
+@property (nonatomic, assign) CGRect dsOrOARect;
 /**
  细节
  */
 @property (nonatomic, assign) CGRect detailViewRect;
+
+@property (nonatomic, assign) CGFloat cellMaxY;
 
 @end

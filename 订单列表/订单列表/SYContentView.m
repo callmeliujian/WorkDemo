@@ -63,7 +63,7 @@
     [self setData];
     [self addSubview:self.orderTypeImageView];
     [self addSubview:self.distanceLabel];
-    [self addSubview:self.driverSkillView];
+    //[self addSubview:self.driverSkillView];
     [self addSubview:self.detailView];
     
 }
@@ -76,9 +76,10 @@
  @param imageViwe 额外的image（司机技能、订单额外功能）
  */
 - (void)setAllFrame:(SYContentViewStyle *)contentViewStyle withImageView:(UIImageView *)imageViwe{
+    [self addSubview:imageViwe];
     self.orderTypeImageView.frame = contentViewStyle.orderTypeRect;
     self.distanceLabel.frame = contentViewStyle.distanceLabelRect;
-    imageViwe.frame = contentViewStyle.driverSkillViewRect;
+    imageViwe.frame = contentViewStyle.dsOrOARect;
     self.detailView.frame = contentViewStyle.detailViewRect;
 }
 

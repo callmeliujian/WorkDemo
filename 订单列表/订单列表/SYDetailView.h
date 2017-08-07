@@ -10,4 +10,6 @@
 
 @interface SYDetailView : UIView
 
+@property (nonatomic, assign) CGFloat maxY;
+
 @end

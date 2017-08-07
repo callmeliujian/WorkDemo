@@ -42,14 +42,18 @@
         NSUInteger i = 0;
         CGFloat j = 0;
         for (NSString *string in self.driveSkillTextMuArray) {
+            // 最多显示3个司机技能
+            if (i > 2) break;
             UILabel *label = [[UILabel alloc] init];
             [self addSubview:label];
             label.text = string;
             label.backgroundColor = self.driveSkillColorMuArray[i];
             [label sizeToFit];
+            label.layer.cornerRadius = 4;
+            label.layer.masksToBounds = YES;
             i++;
             label.frame = CGRectMake(j , 0, label.bounds.size.width, label.bounds.size.height);
-            j = label.bounds.size.width + 10;
+            j = j + label.bounds.size.width + 10;
         }
     }
     

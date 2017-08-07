@@ -24,7 +24,7 @@
     
     self.distanceLabelRect = CGRectMake(50, 10, [UIScreen mainScreen].bounds.size.width, 25);
     
-    self.driverSkillViewRect = CGRectMake(50, 40, [UIScreen mainScreen].bounds.size.width, 20);
+    self.dsOrOARect = CGRectMake(50, 40, [UIScreen mainScreen].bounds.size.width, 20);
     
     self.detailViewRect = CGRectMake(50, 70, [UIScreen mainScreen].bounds.size.width, 200);
     

@@ -93,6 +93,8 @@
         make.right.mas_lessThanOrEqualTo(self.mas_right).mas_offset(-120);
     }];
     
+    self.maxY = self.startLabel.bounds.size.height + self.endLabel.bounds.size.height + self.priceLabel.bounds.size.height;
+    
 }
 
 #pragma mark - Property
@@ -125,7 +127,6 @@
     if (!_startLabel) {
         _startLabel = [[UILabel alloc] init];
         _startLabel.text = @"桑普大厦恍恍惚惚恍恍惚惚恍恍惚惚恍恍惚惚恍恍惚惚恍恍惚惚哈哈哈";
-        //[_startLabel sizeToFit];
     }
     return _startLabel;
 }
