@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "OrderListTableViewCell.h"
+#import "SYContentViewStyle.h"
+
+
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -24,9 +27,10 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.tableView];
     
-    
+        [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -36,12 +40,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellID = @"myCell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellID];
+    OrderListTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
         cell = [[OrderListTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
     }
     
-    cell.textLabel.text = [self.dataArray objectAtIndex:indexPath.row];
+    cell.syContentView.distance = @"51";
+    
+
     
     return cell;
     
@@ -58,12 +64,32 @@
     }
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return @"删除哈哈哈哈哈";
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [SYContentViewStyle caculationContentViewHeight];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 300;
+-(NSArray<UITableViewRowAction*>*)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewRowAction *rowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        // 点击删除时 do something
+        
+        NSLog(@"123");
+        
+        
+    }];
+    
+    //    rowActionSec.backgroundColor = [UIColor colorWithHexString:@"f38202"];
+    rowAction.backgroundColor = [UIColor purpleColor];
+    
+    //    UITableViewRowAction *rowaction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"置顶" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+    //        // 点击置顶时 do something
+    //    }];
+    //rowaction.backgroundColor = [UIColor grayColor];
+    NSArray *arr = @[rowAction];
+    return arr;
 }
+
+
 
 @end

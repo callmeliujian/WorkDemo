@@ -29,4 +29,6 @@
 
 @property (nonatomic, assign) CGFloat cellMaxY;
 
++ (CGFloat)caculationContentViewHeight;
+
 @end

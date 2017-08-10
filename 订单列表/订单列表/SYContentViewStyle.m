@@ -22,12 +22,16 @@
     
     self.orderTypeRect = CGRectMake(0, 0, 50, 50);
     
-    self.distanceLabelRect = CGRectMake(50, 10, [UIScreen mainScreen].bounds.size.width, 25);
+    self.distanceLabelRect = CGRectMake(39, 16, [UIScreen mainScreen].bounds.size.width - 60, 18);
     
-    self.dsOrOARect = CGRectMake(50, 40, [UIScreen mainScreen].bounds.size.width, 20);
+    self.dsOrOARect = CGRectMake(39, 40, [UIScreen mainScreen].bounds.size.width, 20);
     
-    self.detailViewRect = CGRectMake(50, 70, [UIScreen mainScreen].bounds.size.width, 200);
+    self.detailViewRect = CGRectMake(39, 70, [UIScreen mainScreen].bounds.size.width, 75);
     
+}
+
++ (CGFloat)caculationContentViewHeight {
+    return  16 + 18 + 110 + 18;
 }
 
 @end

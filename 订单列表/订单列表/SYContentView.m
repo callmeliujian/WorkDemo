@@ -50,6 +50,7 @@
     if (self) {
         [self setUpUI];
     }
+        //[self setData];
     return self;
 }
 
@@ -60,7 +61,7 @@
     [self.orderTypeImageView sizeToFit];
     //[self setAllFrame:self.contentViewStyle withImageView:(UIImageView*)self.orderAttView];
     [self setAllFrame:self.contentViewStyle withImageView:(UIImageView *)self.driverSkillView];
-    [self setData];
+
     [self addSubview:self.orderTypeImageView];
     [self addSubview:self.distanceLabel];
     //[self addSubview:self.driverSkillView];
@@ -84,8 +85,9 @@
 }
 
 - (void)setData {
-    self.distance = [NSString stringWithFormat:@"%@%@",@"距您",self.distance];
-    self.distanceLabel.text = self.distance;
+    //self.distance = [NSString stringWithFormat:@"%@%@",@"距您",self.distance];
+    NSString *dis = [NSString stringWithFormat:@"%@%@",@"距您",self.distance];
+    self.distanceLabel.text = dis;
 }
 
 #pragma mark - Property
@@ -107,7 +109,9 @@
 - (UILabel *)distanceLabel {
     if (!_distanceLabel) {
         _distanceLabel = [[UILabel alloc] init];
-        //_distanceLabel.backgroundColor = [UIColor blackColor];
+        _distanceLabel.font = [UIFont systemFontOfSize:18];
+        _distanceLabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1/1.0];
+        _distanceLabel.text = self.distance;
     }
     return _distanceLabel;
 }
@@ -128,12 +132,19 @@
     return _detailView;
 }
 
-- (NSString *)distance {
+//- (NSString *)distance {
+//    if (!_distance) {
+//        _distance = [[NSString alloc] init];
+//        //_distance = @"31米";
+//    }
+//    return _distance;
+//}
+- (void)setDistance:(NSString *)distance {
     if (!_distance) {
         _distance = [[NSString alloc] init];
-        _distance = @"31米";
     }
-    return _distance;
+    _distance = [NSString stringWithFormat:@"%@%@",@"距您",distance];
+    _distanceLabel.text = _distance;
 }
 
 - (OrderAttachedView *)orderAttView {

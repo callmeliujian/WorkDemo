@@ -23,27 +23,26 @@
     
     UILabel *wordLabel = [[UILabel alloc] init];
     wordLabel.textColor = [UIColor whiteColor];
-    [wordLabel setText:@"查看"];
+    wordLabel.font = [UIFont systemFontOfSize:19];
+    wordLabel.numberOfLines = 0;
+    [wordLabel setText:@"查\n看"];
     [wordLabel sizeToFit];
     [self addSubview:wordLabel];
     
     UILabel *secondLabel = [[UILabel alloc] init];
-    secondLabel.font = [UIFont systemFontOfSize:15];
+    secondLabel.font = [UIFont systemFontOfSize:12];
     secondLabel.textColor = [UIColor whiteColor];
-    [secondLabel setText:@"38秒"];
+    [secondLabel setText:@"(38秒)"];
     [secondLabel sizeToFit];
     [self addSubview:secondLabel];
     
     [wordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.mas_centerX);
-        make.centerY.mas_equalTo(self.mas_centerY).mas_offset(-5);
-        make.size.mas_equalTo(CGSizeMake(wordLabel.bounds.size.width, wordLabel.bounds.size.height));
+        make.center.mas_equalTo(self.center);
     }];
     
     [secondLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.mas_centerX);
-        make.centerY.mas_equalTo(self.mas_centerY).mas_offset(15);
-        make.size.mas_equalTo(CGSizeMake(secondLabel.bounds.size.width, secondLabel.bounds.size.height));
+        make.top.mas_equalTo(wordLabel.mas_bottom).mas_equalTo(20);
     }];
     
 }

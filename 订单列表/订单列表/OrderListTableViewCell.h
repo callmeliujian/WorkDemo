@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SYContentView.h"
 
 @interface OrderListTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) SYContentView *syContentView;
+@property (nonatomic, strong) NSObject *model;
 
 @end
